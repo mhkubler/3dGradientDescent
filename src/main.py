@@ -31,7 +31,7 @@ def pDifferentiate(f, x, y, h=1e-7):
 def descend(f, x, y, a=0.05, epsilon=0.001, maximum=10000):
     df = pDifferentiate(f, x, y)
     mdf = math.sqrt(df[0]**2 + df[1]**2)
-    path = []
+    path = [[x, y, f(x, y)]]
     i = 0
     while mdf > epsilon and i < maximum:
         x = x - a*df[0]
